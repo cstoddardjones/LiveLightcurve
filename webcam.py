@@ -8,8 +8,10 @@ import os
 
 class Webcam:
 
-    def __init__(self, video_label, width, height, radius, webcam_num=0):
+    def __init__(self, video_label, width, height, radius, mess_up_dict, webcam_num=0):
         self.video_label = video_label
+
+        self.mess_up_dict = mess_up_dict
 
         self.webcam_num = webcam_num
         self.width, self.height =  width, height
@@ -58,12 +60,9 @@ class Webcam:
             # Configure image in the label
             self.video_label.configure(image=photo_image)
         
-            # Repeat the same process after every 10 seconds
+            # Repeat the same process after every 10 ms
             self.video_label.after(10, self.showCamera)
         
-
-        else:
-            print('bruh')
 
 
 
@@ -97,10 +96,6 @@ class Webcam:
 
         # ensuring that aperture isn't off screen
         self.setAperturePosition(self.ap_x, self.ap_y)
-
-    
-    def setFilter(self, filter=3):
-        self.filter = filter
 
 
     def getIntensitySquare(self):
