@@ -62,8 +62,6 @@ class Plot:
         else: self.gap_start = gap_time_int
 
         self.gap_end = self.gap_start + gap_duration
-
-        print(self.gap_start, self.gap_end)
     
 
     def checkGap(self):
@@ -158,10 +156,6 @@ class Plot:
 
 
     def resetPlot(self):
-        #print(self.time)
-        print([j-i for i, j in zip(self.time[:-1], self.time[1:])])
-        print(np.average([j-i for i, j in zip(self.time[:-1], self.time[1:])]))
-
         self.plotting = False
         self.paused = False
 

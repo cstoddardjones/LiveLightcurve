@@ -22,6 +22,8 @@ class RotatoWindow(tk.CTk):
         
         self.win_width, self.win_height = 1300, 750 # pix
 
+        self.iconbitmap('DuckSolo.ico')
+
         self.webcam_width, self.webcam_height = 320, 240 # pix
         self.webcam_number = 0
         
@@ -250,19 +252,6 @@ class RotatoWindow(tk.CTk):
         else: self.video.filter = 3
 
 
-    def mess_data_cmd(self):
-        print('mess data')
-
-
-    def save_data_cmd(self):
-        print('save data')
-        self.plot.updatePlotTest()
-
-    
-    def save_plot_cmd(self):
-        print('save plot')
-        self.plot.updatePlotTest()
-    
 
     def openSettings(self):
         self.pauseEverything()
